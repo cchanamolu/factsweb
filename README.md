@@ -21,4 +21,4 @@ FactFuse aims to foster a community-driven environment where knowledge-sharing i
 
 ## Get Involved
 
-contribute, and vote on intriguing facts across various categories. Together, let's build a repository of knowledge that inspires and enlightens!
+Contribute, and vote on intriguing facts across various categories. Together, let's build a repository of knowledge that inspires and enlightens!
