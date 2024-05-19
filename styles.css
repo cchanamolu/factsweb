@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #292524;
+  color: #fafaf9;
+  font-family: "Sono", sans-serif;
+  padding: 48px 64px;
+}
+
+.hidden {
+  display: none !important;
+}
+/* Main Layout */
+.container {
+  /* page fits to 1500px below that page shrinks to fit the device*/
+  max-width: 1500px;
+  /* Margin top and bottom has 0 and left and right has auto
+  which makes it align center of the page*/
+  margin: 0 auto;
+  /* background-color: aqua;*/
+}
+.header {
+  margin-bottom: 40px;
+  /* background-color: red;*/
+  padding: 10px;
+  /* display flex distributes space between all flex elements*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.main {
+  /* to differentiate the aside 
+  and section of main we can use grid */
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 48px;
+}
+
+@media (max-width: 900px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+}
+/* Elements */
+.logo {
+  /* background-color: blue;*/
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.logo img {
+  /* all the images under 
+  the logo class are modified with the dimensions below*/
+  height: 68px;
+  width: 68px;
+}
+h1 {
+  font-size: 42px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: "Coiny", sans-serif;
+}
+.fact {
+  font-size: 20px;
+  line-height: 1.4;
+  font-family: "Sono", sans-serif;
+  background-color: #44403c;
+  margin-bottom: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  letter-spacing: -1px;
+  border-radius: 16px;
+}
+
+@media (max-width: 1200px) {
+  .fact {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+  }
+}
+.tag {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "Coiny", sans-serif;
+  padding-top: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 100px;
+}
+
+ul {
+  list-style: none;
+}
+
+.vote-buttons {
+  /*To keep the vote buttons to extreme
+   right we can use margin left auto to adjust the
+    space to hold it in the right */
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+  /* Flex shrink will prevent the shrinking of vote buttons when display size decreses*/
+  flex-shrink: 0;
+}
+
+.vote-buttons button {
+  border: none;
+  background-color: #78716c;
+  font-size: 18px;
+  color: inherit;
+  border-radius: 100px;
+  padding: 6px 12px;
+  font-family: inherit;
+  /* To increase the boldness in the buttons*/
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.vote-buttons button:hover {
+  background-color: #292524;
+}
+
+.source:link,
+.source:visited {
+  color: #a8a29e;
+  text-decoration: none;
+  margin-left: 10px;
+  /* transitioning between link and hover making a delay of 0.3s to make it smooth */
+  transition: 0.3s;
+}
+/* Hover around changes the color of the hyperlink*/
+.source:hover,
+.source:active {
+  color: aqua;
+}
+
+.btn {
+  border: none;
+  font-family: "Coiny", sans-serif;
+  text-transform: uppercase;
+  line-height: 1;
+  font-size: 17px;
+  padding: 16px 0 13px;
+  margin-bottom: 10px;
+  color: inherit;
+  background-image: linear-gradient(135deg, #3b82f6, #ef4444, #16a34a, #eab308);
+  /* Border radius to round up the buttons*/
+  border-radius: 100px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  transform: scale(110%) rotate(-2deg);
+}
+
+.btn-large {
+  font-size: 20px;
+  padding: 20px 32px 17px;
+}
+
+.btn-all-categories {
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.btn-remaining-categories {
+  width: 100%;
+  background-image: none;
+}
+/* Forms*/
+
+.factForms {
+  background-color: #44403c;
+  margin-bottom: 40px;
+  padding: 16px 32px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  border-radius: 16px;
+}
+
+.factForms input,
+.factForms select {
+  width: 220px;
+  background-color: #78716c;
+  border: none;
+  border-radius: 100px;
+  padding: 16px;
+  font-size: 18px;
+  color: inherit;
+  font-family: inherit;
+}
+
+.factForms input::placeholder {
+  color: #a8a29e;
+  font-family: inherit;
+}
+
+.factForms input:first-child {
+  flex-grow: 1;
+}
+
+.factForms span {
+  font-weight: 600;
+  font-size: 18px;
+  margin-right: 20px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    padding: 32px 48px;
+  }
+  .factForms {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .factForms input,
+  .factForms select {
+    width: auto;
+  }
+}
